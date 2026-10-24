@@ -149,3 +149,39 @@ cartButtons.forEach((button) => {
     updateCartCount();
   });
 });
+
+const sortSelect = document.getElementById("sort-by");
+const sortOrderButton = document.getElementById("sort-order");
+
+function sortProducts() {
+  const sortKey = sortSelect.value;
+  const direction = sortOrderButton.dataset.order === "asc" ? 1 : -1;
+
+  products.sort((productA, productB) => {
+    const valueA = Number(productA.dataset[sortKey]);
+    const valueB = Number(productB.dataset[sortKey]);
+
+    return (valueA - valueB) * direction;
+  });
+
+  productList.append(...products);
+}
+
+sortSelect.addEventListener("change", sortProducts);
+
+sortOrderButton.addEventListener("click", () => {
+  const newOrder = sortOrderButton.dataset.order === "asc" ? "desc" : "asc";
+  const icon = sortOrderButton.querySelector(".bi");
+
+  sortOrderButton.dataset.order = newOrder;
+  icon.classList.toggle("bi-sort-up", newOrder === "asc");
+  icon.classList.toggle("bi-sort-down", newOrder === "desc");
+
+  if (newOrder === "asc") {
+    sortOrderButton.setAttribute("aria-label", "Sort order: ascending");
+  } else {
+    sortOrderButton.setAttribute("aria-label", "Sort order: descending");
+  }
+
+  sortProducts();
+});
