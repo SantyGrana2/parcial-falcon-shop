@@ -110,3 +110,42 @@ favoriteButtons.forEach((button) => {
     setFavoriteState(button, isFavorite);
   });
 });
+
+const cartCount = document.getElementById("cart-count");
+const cartButtons = productList.querySelectorAll(".product-card__btn-cart");
+const cart = new Map();
+
+function getCartTotal() {
+  let total = 0;
+
+  cart.forEach((quantity) => {
+    total += quantity;
+  });
+
+  return total;
+}
+
+function updateCartCount() {
+  cartCount.textContent = getCartTotal();
+  cartCount.classList.add("topbar__badge--bump");
+}
+
+cartCount.addEventListener("animationend", () => {
+  cartCount.classList.remove("topbar__badge--bump");
+});
+
+cartButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const product = button.closest(".product-card");
+
+    if (product.dataset.stock !== "true") {
+      return;
+    }
+
+    const productName = product.dataset.name;
+    const currentQuantity = cart.get(productName) ?? 0;
+
+    cart.set(productName, currentQuantity + 1);
+    updateCartCount();
+  });
+});
