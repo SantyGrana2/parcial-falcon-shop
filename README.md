@@ -23,3 +23,10 @@ Proyecto de Programación 4: recreación de la interfaz de comercio electrónico
 ## Demo
 
 https://falcon-shop-p4.netlify.app
+
+## Convenciones CSS (BEM)
+
+- **Bloque:** componente independiente. Ejemplos: `topbar`, `sidebar`, `catalog`, `product-card`.
+- **Elemento:** parte de un bloque, separada con `__`. Ejemplo: `product-card__price`.
+- **Modificador:** variante o estado, separado con `--`. Ejemplos: `product-card--soldout`, `product-card__btn-fav--active`, `sidebar__link--active`.
+- Las clases de Bootstrap se usan para estructura, grilla y utilidades. Las clases BEM se usan para los estilos propios en `css/styles.css`.
