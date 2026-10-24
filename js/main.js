@@ -32,3 +32,54 @@ sidebarLinks.forEach((link) => {
     }
   });
 });
+
+const searchForm = document.querySelector(".topbar__search");
+const searchInput = document.getElementById("search-input");
+const productList = document.getElementById("product-list");
+const resultsCount = document.getElementById("results-count");
+const noResults = document.getElementById("no-results");
+const products = Array.from(productList.querySelectorAll(".product-card"));
+
+function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function updateResultsCount(visibleCount) {
+  if (visibleCount === 0) {
+    resultsCount.textContent = `Showing 0 of ${products.length} Products`;
+  } else {
+    resultsCount.textContent = `Showing 1-${visibleCount} of ${products.length} Products`;
+  }
+
+  noResults.classList.toggle("d-none", visibleCount > 0);
+  productList.classList.toggle("d-none", visibleCount === 0);
+}
+
+function filterProducts() {
+  const query = normalizeText(searchInput.value);
+  let visibleCount = 0;
+
+  products.forEach((product) => {
+    const searchableText = normalizeText(`${product.dataset.name} ${product.dataset.category}`);
+    const matches = searchableText.includes(query);
+
+    product.classList.toggle("d-none", !matches);
+
+    if (matches) {
+      visibleCount++;
+    }
+  });
+
+  updateResultsCount(visibleCount);
+}
+
+searchInput.addEventListener("input", filterProducts);
+
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  filterProducts();
+});
