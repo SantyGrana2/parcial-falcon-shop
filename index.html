@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
     <header class="topbar navbar sticky-top">
       <div class="container-fluid gap-3">
         <button class="btn topbar__toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
-          <i class="bi bi-list"></i>
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
         <a class="navbar-brand topbar__brand" href="#">
           <img src="img/logo.jpeg" alt="Falcon" class="topbar__logo" height="36">
@@ -33,25 +34,27 @@
         </form>
         <ul class="topbar__actions navbar-nav flex-row align-items-center gap-3 ms-auto">
           <li class="nav-item">
-            <button id="theme-toggle" class="topbar__theme btn btn-sm rounded-circle" type="button" aria-label="Switch theme">
-              <i class="bi bi-moon-fill"></i>
+            <button id="theme-toggle" class="topbar__theme btn btn-sm rounded-circle" type="button" aria-label="Switch theme" aria-pressed="false">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Shopping cart">
-              <i class="bi bi-cart-fill"></i>
-              <span id="cart-count" class="topbar__badge badge rounded-pill text-bg-warning position-absolute top-0 start-100 translate-middle">0</span>
+            <a class="nav-link topbar__icon position-relative" href="#">
+              <span class="visually-hidden">Shopping cart</span>
+              <i class="bi bi-cart-fill" aria-hidden="true"></i>
+              <span id="cart-count" class="topbar__badge badge rounded-pill text-bg-warning position-absolute top-0 start-100 translate-middle" aria-live="polite">0</span>
+              <span class="visually-hidden">items</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Notifications">
-              <i class="bi bi-bell-fill"></i>
+            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Notifications, new alerts">
+              <i class="bi bi-bell-fill" aria-hidden="true"></i>
               <span class="topbar__dot position-absolute top-0 start-100 translate-middle p-1 bg-primary rounded-circle"></span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link topbar__icon" href="#" aria-label="Apps">
-              <i class="bi bi-grid-3x3-gap-fill"></i>
+              <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
             </a>
           </li>
           <li class="nav-item dropdown">
@@ -80,9 +83,9 @@
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-dashboard" aria-expanded="false" aria-controls="menu-dashboard">
-                    <i class="bi bi-pie-chart-fill"></i>
+                    <i class="bi bi-pie-chart-fill" aria-hidden="true"></i>
                     Dashboard
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-dashboard" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Default</a></li>
@@ -96,21 +99,21 @@
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-calendar-week-fill"></i>
+                    <i class="bi bi-calendar-week-fill" aria-hidden="true"></i>
                     Calendar
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-chat-dots-fill"></i>
+                    <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
                     Chat
                   </a>
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-email" aria-expanded="false" aria-controls="menu-email">
-                    <i class="bi bi-envelope-fill"></i>
+                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
                     Email
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-email" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Inbox</a></li>
@@ -120,9 +123,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-events" aria-expanded="false" aria-controls="menu-events">
-                    <i class="bi bi-calendar-event-fill"></i>
+                    <i class="bi bi-calendar-event-fill" aria-hidden="true"></i>
                     Events
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-events" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Create an event</a></li>
@@ -132,9 +135,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-ecommerce" aria-expanded="true" aria-controls="menu-ecommerce">
-                    <i class="bi bi-cart-fill"></i>
+                    <i class="bi bi-cart-fill" aria-hidden="true"></i>
                     E Commerce
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-ecommerce" class="sidebar__submenu collapse show list-unstyled ps-4">
                     <li><a class="sidebar__link sidebar__link--active nav-link" href="#" aria-current="page">Product list</a></li>
@@ -148,10 +151,10 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-elearning" aria-expanded="false" aria-controls="menu-elearning">
-                    <i class="bi bi-mortarboard-fill"></i>
+                    <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
                     E Learning
                     <span class="sidebar__badge badge rounded-pill bg-success-subtle text-success-emphasis">New</span>
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-elearning" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Course list</a></li>
@@ -161,15 +164,15 @@
                 </li>
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-kanban-fill"></i>
+                    <i class="bi bi-kanban-fill" aria-hidden="true"></i>
                     Kanban
                   </a>
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-social" aria-expanded="false" aria-controls="menu-social">
-                    <i class="bi bi-share-fill"></i>
+                    <i class="bi bi-share-fill" aria-hidden="true"></i>
                     Social
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-social" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Feed</a></li>
@@ -179,9 +182,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-support" aria-expanded="false" aria-controls="menu-support">
-                    <i class="bi bi-headset"></i>
+                    <i class="bi bi-headset" aria-hidden="true"></i>
                     Support desk
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-support" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Table view</a></li>
@@ -194,21 +197,21 @@
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-flag-fill"></i>
+                    <i class="bi bi-flag-fill" aria-hidden="true"></i>
                     Starter
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-globe"></i>
+                    <i class="bi bi-globe" aria-hidden="true"></i>
                     Landing
                   </a>
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-auth" aria-expanded="false" aria-controls="menu-auth">
-                    <i class="bi bi-lock-fill"></i>
+                    <i class="bi bi-lock-fill" aria-hidden="true"></i>
                     Authentication
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-auth" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Login</a></li>
@@ -218,9 +221,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-user" aria-expanded="false" aria-controls="menu-user">
-                    <i class="bi bi-person-fill"></i>
+                    <i class="bi bi-person-fill" aria-hidden="true"></i>
                     User
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-user" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Profile</a></li>
@@ -229,9 +232,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-pricing" aria-expanded="false" aria-controls="menu-pricing">
-                    <i class="bi bi-tags-fill"></i>
+                    <i class="bi bi-tags-fill" aria-hidden="true"></i>
                     Pricing
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-pricing" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Pricing default</a></li>
@@ -240,9 +243,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-faq" aria-expanded="false" aria-controls="menu-faq">
-                    <i class="bi bi-question-circle-fill"></i>
+                    <i class="bi bi-question-circle-fill" aria-hidden="true"></i>
                     Faq
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-faq" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Faq basic</a></li>
@@ -251,9 +254,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-errors" aria-expanded="false" aria-controls="menu-errors">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
                     Errors
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-errors" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">404</a></li>
@@ -262,9 +265,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-misc" aria-expanded="false" aria-controls="menu-misc">
-                    <i class="bi bi-pin-angle-fill"></i>
+                    <i class="bi bi-pin-angle-fill" aria-hidden="true"></i>
                     Miscellaneous
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-misc" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Associations</a></li>
@@ -277,9 +280,9 @@
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-forms" aria-expanded="false" aria-controls="menu-forms">
-                    <i class="bi bi-file-earmark-text-fill"></i>
+                    <i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i>
                     Forms
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-forms" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Basic</a></li>
@@ -288,15 +291,15 @@
                 </li>
                 <li class="nav-item">
                   <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
-                    <i class="bi bi-table"></i>
+                    <i class="bi bi-table" aria-hidden="true"></i>
                     Tables
                   </a>
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-charts" aria-expanded="false" aria-controls="menu-charts">
-                    <i class="bi bi-bar-chart-fill"></i>
+                    <i class="bi bi-bar-chart-fill" aria-hidden="true"></i>
                     Charts
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-charts" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Chartjs</a></li>
@@ -305,9 +308,9 @@
                 </li>
                 <li class="nav-item">
                   <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-components" aria-expanded="false" aria-controls="menu-components">
-                    <i class="bi bi-puzzle-fill"></i>
+                    <i class="bi bi-puzzle-fill" aria-hidden="true"></i>
                     Components
-                    <i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-chevron-down ms-auto" aria-hidden="true"></i>
                   </button>
                   <ul id="menu-components" class="sidebar__submenu collapse list-unstyled ps-4">
                     <li><a class="sidebar__link nav-link" href="#">Alerts</a></li>
@@ -319,7 +322,7 @@
             </nav>
           </div>
         </aside>
-        <main class="catalog col-lg-9 col-xl-10 py-4">
+        <main id="main-content" class="catalog col-lg-9 col-xl-10 py-4" tabindex="-1">
           <section class="catalog__header card mb-3">
             <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-3">
               <div class="catalog__summary d-flex align-items-center gap-2">
@@ -340,11 +343,11 @@
                     <option value="reviews">Review</option>
                   </select>
                   <button id="sort-order" class="btn btn-outline-secondary" type="button" data-order="asc" aria-label="Change sort order">
-                    <i class="bi bi-sort-up"></i>
+                    <i class="bi bi-sort-up" aria-hidden="true"></i>
                   </button>
                 </div>
                 <button id="view-toggle" class="catalog__view-toggle btn btn-sm btn-link text-secondary" type="button" aria-label="Switch view">
-                  <i class="bi bi-grid-3x3-gap-fill"></i>
+                  <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
@@ -377,12 +380,12 @@
                     <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$20</strong></p>
                     <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--available">Available</span></p>
                     <div class="product-card__actions d-grid gap-2 mt-auto">
-                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
-                        <i class="bi bi-heart"></i>
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button" aria-pressed="false" aria-label="Favourite: Logitech G305 Gaming Mouse">
+                        <i class="bi bi-heart" aria-hidden="true"></i>
                         Favourite
                       </button>
                       <button class="product-card__btn-cart btn btn-primary btn-sm" type="button">
-                        <i class="bi bi-cart-plus-fill"></i>
+                        <i class="bi bi-cart-plus-fill" aria-hidden="true"></i>
                         Add to Cart
                       </button>
                     </div>
@@ -417,12 +420,12 @@
                     <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$24</strong></p>
                     <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--available">Available</span></p>
                     <div class="product-card__actions d-grid gap-2 mt-auto">
-                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
-                        <i class="bi bi-heart"></i>
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button" aria-pressed="false" aria-label="Favourite: Apple Watch Series 4 44mm GPS Only">
+                        <i class="bi bi-heart" aria-hidden="true"></i>
                         Favourite
                       </button>
                       <button class="product-card__btn-cart btn btn-primary btn-sm" type="button">
-                        <i class="bi bi-cart-plus-fill"></i>
+                        <i class="bi bi-cart-plus-fill" aria-hidden="true"></i>
                         Add to Cart
                       </button>
                     </div>
@@ -457,12 +460,12 @@
                     <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$60</strong></p>
                     <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--soldout">Stock-Out</span></p>
                     <div class="product-card__actions d-grid gap-2 mt-auto">
-                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
-                        <i class="bi bi-heart"></i>
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button" aria-pressed="false" aria-label="Favourite: Canon Standard Zoom Lens">
+                        <i class="bi bi-heart" aria-hidden="true"></i>
                         Favourite
                       </button>
                       <button class="product-card__btn-cart btn btn-primary btn-sm" type="button" disabled>
-                        <i class="bi bi-cart-plus-fill"></i>
+                        <i class="bi bi-cart-plus-fill" aria-hidden="true"></i>
                         Add to Cart
                       </button>
                     </div>
@@ -474,14 +477,22 @@
           <p id="no-results" class="catalog__empty text-center text-muted my-5 d-none">No products found.</p>
           <nav class="catalog__pagination mt-4" aria-label="Product pagination">
             <ul class="pagination justify-content-center">
-              <li class="page-item disabled"><a class="page-link">Previous</a></li>
+              <li class="page-item disabled"><span class="page-link">Previous</span></li>
               <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-              <li class="page-item disabled"><a class="page-link">Next</a></li>
+              <li class="page-item disabled"><span class="page-link">Next</span></li>
             </ul>
           </nav>
         </main>
       </div>
     </div>
+    <footer class="footer container-fluid py-3">
+      <div class="row">
+        <div class="col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 d-flex flex-wrap justify-content-between gap-2 small text-muted">
+          <p class="mb-0">Falcon Shop | Proyecto de Programación 4 | 2026</p>
+          <p class="mb-0">v1.0.0</p>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
