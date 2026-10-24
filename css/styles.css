@@ -287,3 +287,45 @@ a {
   --bs-btn-disabled-bg: var(--color-primary);
   --bs-btn-disabled-border-color: var(--color-primary);
 }
+
+.product-card--soldout .product-card__image {
+  filter: grayscale(60%);
+  opacity: 0.7;
+}
+
+.product-card__btn-fav--active {
+  --bs-btn-color: var(--color-danger);
+  --bs-btn-border-color: var(--color-danger);
+  --bs-btn-hover-color: var(--color-danger);
+  --bs-btn-hover-border-color: var(--color-danger);
+  --bs-btn-active-color: var(--color-danger);
+  --bs-btn-active-border-color: var(--color-danger);
+}
+
+.topbar__badge--bump {
+  animation: badge-bump 0.3s ease;
+}
+
+@keyframes badge-bump {
+  50% {
+    scale: 1.4;
+  }
+}
+
+.sidebar__link:focus-visible,
+.topbar__icon:focus-visible,
+.product-card__actions .btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar__link .bi-chevron-down {
+    transition: none;
+  }
+
+  .topbar__badge--bump {
+    animation: none;
+  }
+}
