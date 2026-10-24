@@ -16,39 +16,53 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-        <header class="topbar navbar sticky-top bg-white border-bottom">
-      <div class="container-fluid gap-2">
-        <button class="btn topbar__toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Abrir menú">
+    <header class="topbar navbar sticky-top">
+      <div class="container-fluid gap-3">
+        <button class="btn topbar__toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
           <i class="bi bi-list"></i>
         </button>
         <a class="navbar-brand topbar__brand" href="#">
-          <img src="img/logo_falcon.png" alt="Falcon" class="topbar__logo" height="36">
+          <img src="img/logo.jpeg" alt="Falcon" class="topbar__logo" height="36">
         </a>
-        <form class="topbar__search d-none d-md-flex flex-grow-1" role="search">
-          <label for="search-input" class="visually-hidden">Buscar productos</label>
-          <input id="search-input" class="form-control topbar__search-input" type="search" placeholder="Buscar productos..." autocomplete="off">
+        <form class="topbar__search d-none d-md-block flex-grow-1" role="search">
+          <label for="search-input" class="visually-hidden">Search products</label>
+          <div class="position-relative">
+            <i class="bi bi-search topbar__search-icon position-absolute top-50 start-0 translate-middle-y ms-3" aria-hidden="true"></i>
+            <input id="search-input" class="topbar__search-input form-control rounded-pill ps-5" type="search" placeholder="Search..." autocomplete="off">
+          </div>
         </form>
         <ul class="topbar__actions navbar-nav flex-row align-items-center gap-3 ms-auto">
           <li class="nav-item">
-            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Carrito de compras">
-              <i class="bi bi-cart3"></i>
-              <span id="cart-count" class="topbar__badge badge rounded-pill bg-danger">0</span>
+            <button id="theme-toggle" class="topbar__theme btn btn-sm rounded-circle" type="button" aria-label="Switch theme">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Shopping cart">
+              <i class="bi bi-cart-fill"></i>
+              <span id="cart-count" class="topbar__badge badge rounded-pill text-bg-warning position-absolute top-0 start-100 translate-middle">0</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link topbar__icon" href="#" aria-label="Notificaciones">
-              <i class="bi bi-bell"></i>
+            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Notifications">
+              <i class="bi bi-bell-fill"></i>
+              <span class="topbar__dot position-absolute top-0 start-100 translate-middle p-1 bg-primary rounded-circle"></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link topbar__icon" href="#" aria-label="Apps">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link topbar__icon dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú de perfil">
-              <i class="bi bi-person-circle"></i>
+            <a class="nav-link topbar__profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Profile menu">
+              <img src="img/avatar.jpeg" alt="" class="topbar__avatar rounded-circle" width="36" height="36">
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><a class="dropdown-item" href="#">Profile &amp; account</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>
           </li>
         </ul>
