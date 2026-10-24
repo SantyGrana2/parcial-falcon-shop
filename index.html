@@ -55,8 +55,151 @@
         </ul>
       </div>
     </header>
-    <aside></aside>
-    <main></main>
+        <div class="container-fluid">
+      <div class="row">
+        <aside id="sidebar" class="sidebar offcanvas-lg offcanvas-start col-lg-3 col-xl-2 bg-white border-end" tabindex="-1" aria-labelledby="sidebar-title">
+          <div class="offcanvas-header">
+            <h2 id="sidebar-title" class="offcanvas-title h5">Menú</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Cerrar menú"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="sidebar__nav w-100 py-3" aria-label="Navegación principal">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-dashboard" aria-expanded="false" aria-controls="menu-dashboard">
+                    <i class="bi bi-pie-chart"></i>
+                    Dashboard
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-dashboard" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Default</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Analytics</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">CRM</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="sidebar__heading text-uppercase small fw-semibold text-muted mt-3 mb-1 px-3">App</p>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-email" aria-expanded="false" aria-controls="menu-email">
+                    <i class="bi bi-envelope"></i>
+                    Email
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-email" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Inbox</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Email detail</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Compose</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-events" aria-expanded="false" aria-controls="menu-events">
+                    <i class="bi bi-calendar-event"></i>
+                    Events
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-events" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Create an event</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Event detail</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Event list</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-ecommerce" aria-expanded="true" aria-controls="menu-ecommerce">
+                    <i class="bi bi-cart3"></i>
+                    E Commerce
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-ecommerce" class="sidebar__submenu collapse show list-unstyled ps-4">
+                    <li><a class="sidebar__link sidebar__link--active nav-link" href="#" aria-current="page">Products</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Product details</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Orders</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Customers</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Shopping cart</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Checkout</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-elearning" aria-expanded="false" aria-controls="menu-elearning">
+                    <i class="bi bi-mortarboard"></i>
+                    E Learning
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-elearning" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Course list</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Course details</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Student overview</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="bi bi-kanban"></i>
+                    Kanban
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-social" aria-expanded="false" aria-controls="menu-social">
+                    <i class="bi bi-share"></i>
+                    Social
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-social" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Feed</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Activity log</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Followers</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-support" aria-expanded="false" aria-controls="menu-support">
+                    <i class="bi bi-headset"></i>
+                    Support Desk
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-support" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Table view</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Contacts</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Tickets</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="sidebar__heading text-uppercase small fw-semibold text-muted mt-3 mb-1 px-3">Pages</p>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-auth" aria-expanded="false" aria-controls="menu-auth">
+                    <i class="bi bi-shield-lock"></i>
+                    Authentication
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-auth" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Login</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Register</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Forgot password</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button class="sidebar__link nav-link d-flex align-items-center gap-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menu-user" aria-expanded="false" aria-controls="menu-user">
+                    <i class="bi bi-person"></i>
+                    User
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                  </button>
+                  <ul id="menu-user" class="sidebar__submenu collapse list-unstyled ps-4">
+                    <li><a class="sidebar__link nav-link" href="#">Profile</a></li>
+                    <li><a class="sidebar__link nav-link" href="#">Settings</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="sidebar__link nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="bi bi-tag"></i>
+                    Pricing
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+        <main class="catalog col-lg-9 col-xl-10 py-4"></main>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
