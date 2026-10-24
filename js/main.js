@@ -83,3 +83,30 @@ searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   filterProducts();
 });
+
+const favoriteButtons = productList.querySelectorAll(".product-card__btn-fav");
+const favorites = new Set();
+
+function setFavoriteState(button, isFavorite) {
+  const icon = button.querySelector(".bi");
+
+  button.classList.toggle("product-card__btn-fav--active", isFavorite);
+  button.setAttribute("aria-pressed", String(isFavorite));
+  icon.classList.toggle("bi-heart", !isFavorite);
+  icon.classList.toggle("bi-heart-fill", isFavorite);
+}
+
+favoriteButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const productName = button.closest(".product-card").dataset.name;
+    const isFavorite = !favorites.has(productName);
+
+    if (isFavorite) {
+      favorites.add(productName);
+    } else {
+      favorites.delete(productName);
+    }
+
+    setFavoriteState(button, isFavorite);
+  });
+});
