@@ -349,3 +349,39 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media (max-width: 767.98px) {
+  .topbar__logo {
+    height: 28px;
+  }
+
+  .topbar__icon {
+    font-size: 1.1rem;
+  }
+
+  .topbar__theme {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .topbar__avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .catalog__controls {
+    width: 100%;
+  }
+
+  .catalog__sort {
+    flex: 1;
+  }
+
+  .product-card__title {
+    font-size: 1rem;
+  }
+
+  .product-card__price {
+    font-size: 1.25rem;
+  }
+}
