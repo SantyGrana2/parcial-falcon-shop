@@ -12,10 +12,49 @@
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header></header>
+        <header class="topbar navbar sticky-top bg-white border-bottom">
+      <div class="container-fluid gap-2">
+        <button class="btn topbar__toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Abrir menú">
+          <i class="bi bi-list"></i>
+        </button>
+        <a class="navbar-brand topbar__brand" href="#">
+          <i class="bi bi-feather"></i>
+          falcon
+        </a>
+        <form class="topbar__search d-none d-md-flex flex-grow-1" role="search">
+          <label for="search-input" class="visually-hidden">Buscar productos</label>
+          <input id="search-input" class="form-control topbar__search-input" type="search" placeholder="Buscar productos..." autocomplete="off">
+        </form>
+        <ul class="topbar__actions navbar-nav flex-row align-items-center gap-3 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link topbar__icon position-relative" href="#" aria-label="Carrito de compras">
+              <i class="bi bi-cart3"></i>
+              <span id="cart-count" class="topbar__badge badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link topbar__icon" href="#" aria-label="Notificaciones">
+              <i class="bi bi-bell"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link topbar__icon dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú de perfil">
+              <i class="bi bi-person-circle"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
     <aside></aside>
     <main></main>
     <script
