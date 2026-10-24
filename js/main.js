@@ -108,6 +108,7 @@ favoriteButtons.forEach((button) => {
     }
 
     setFavoriteState(button, isFavorite);
+    saveFavorites();
   });
 });
 
@@ -145,8 +146,13 @@ cartButtons.forEach((button) => {
     const productName = product.dataset.name;
     const currentQuantity = cart.get(productName) ?? 0;
 
+    if (currentQuantity >= MAX_QUANTITY_PER_PRODUCT) {
+      return;
+    }
+
     cart.set(productName, currentQuantity + 1);
     updateCartCount();
+    saveCart();
   });
 });
 
@@ -185,3 +191,94 @@ sortOrderButton.addEventListener("click", () => {
 
   sortProducts();
 });
+
+const STORAGE_KEYS = {
+  favorites: "falconShop.favorites",
+  cart: "falconShop.cart",
+};
+const MAX_QUANTITY_PER_PRODUCT = 99;
+const MAX_SEARCH_LENGTH = 50;
+
+const productNames = new Set(products.map((product) => product.dataset.name));
+const availableProductNames = new Set(
+  products
+    .filter((product) => product.dataset.stock === "true")
+    .map((product) => product.dataset.name)
+);
+
+function saveToStorage(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.warn("No se pudo guardar en localStorage:", error);
+  }
+}
+
+function readFromStorage(key) {
+  try {
+    const rawValue = localStorage.getItem(key);
+
+    if (rawValue === null) {
+      return null;
+    }
+
+    return JSON.parse(rawValue);
+  } catch (error) {
+    console.warn("Datos guardados inválidos, se ignoran:", error);
+    return null;
+  }
+}
+
+function saveFavorites() {
+  saveToStorage(STORAGE_KEYS.favorites, Array.from(favorites));
+}
+
+function saveCart() {
+  saveToStorage(STORAGE_KEYS.cart, Array.from(cart.entries()));
+}
+
+function loadFavorites() {
+  const savedFavorites = readFromStorage(STORAGE_KEYS.favorites);
+
+  if (!Array.isArray(savedFavorites)) {
+    return;
+  }
+
+  savedFavorites.forEach((name) => {
+    if (productNames.has(name)) {
+      favorites.add(name);
+    }
+  });
+
+  favoriteButtons.forEach((button) => {
+    const productName = button.closest(".product-card").dataset.name;
+    setFavoriteState(button, favorites.has(productName));
+  });
+}
+
+function loadCart() {
+  const savedCart = readFromStorage(STORAGE_KEYS.cart);
+
+  if (!Array.isArray(savedCart)) {
+    return;
+  }
+
+  savedCart.forEach((entry) => {
+    if (!Array.isArray(entry) || entry.length !== 2) {
+      return;
+    }
+
+    const [name, quantity] = entry;
+    const isValidQuantity = Number.isInteger(quantity) && quantity > 0 && quantity <= MAX_QUANTITY_PER_PRODUCT;
+
+    if (availableProductNames.has(name) && isValidQuantity) {
+      cart.set(name, quantity);
+    }
+  });
+
+  cartCount.textContent = getCartTotal();
+}
+
+searchInput.maxLength = MAX_SEARCH_LENGTH;
+loadFavorites();
+loadCart();
