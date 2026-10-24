@@ -22,8 +22,7 @@
           <i class="bi bi-list"></i>
         </button>
         <a class="navbar-brand topbar__brand" href="#">
-          <i class="bi bi-feather"></i>
-          falcon
+          <img src="img/logo_falcon.png" alt="Falcon" class="topbar__logo" height="36">
         </a>
         <form class="topbar__search d-none d-md-flex flex-grow-1" role="search">
           <label for="search-input" class="visually-hidden">Buscar productos</label>
@@ -197,7 +196,143 @@
             </nav>
           </div>
         </aside>
-        <main class="catalog col-lg-9 col-xl-10 py-4"></main>
+        <main class="catalog col-lg-9 col-xl-10 py-4">
+          <section class="catalog__header card mb-3">
+            <div class="card-body d-flex flex-wrap align-items-center gap-3">
+              <p id="results-count" class="catalog__count fw-semibold mb-0">Showing 1-3 of 3 Products</p>
+            </div>
+          </section>
+          <section id="product-list" class="catalog__list card" aria-label="Product list">
+            <article class="product-card row g-3 mx-0 p-3" data-name="Logitech G305 Gaming Mouse" data-category="computer-accessories" data-price="47.5" data-rating="3.5" data-stock="true">
+              <div class="col-sm-5 col-md-4">
+                <img src="img/productos/Mouse_producto.jpeg" class="product-card__image img-fluid rounded" alt="Logitech G305 white wireless gaming mouse">
+              </div>
+              <div class="col-sm-7 col-md-8">
+                <div class="row h-100">
+                  <div class="col-lg-7">
+                    <h2 class="product-card__title h5"><a href="#">Logitech G305 Gaming Mouse</a></h2>
+                    <p class="product-card__category small text-muted">Computer &amp; Accessories</p>
+                  </div>
+                  <div class="product-card__details col-lg-5 d-flex flex-column">
+                    <p class="product-card__price h4 mb-0">$47.5</p>
+                    <p class="product-card__price-info small mb-2">
+                      <del class="product-card__price-old">$95</del>
+                      <span class="product-card__discount">-50%</span>
+                    </p>
+                    <p class="product-card__rating mb-2" aria-label="Rating: 3.5 out of 5, 6 reviews">
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-half" aria-hidden="true"></i>
+                      <i class="bi bi-star" aria-hidden="true"></i>
+                      <span class="product-card__reviews">(6)</span>
+                    </p>
+                    <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$20</strong></p>
+                    <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--available">Available</span></p>
+                    <div class="product-card__actions d-grid gap-2 mt-auto">
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
+                        <i class="bi bi-heart"></i>
+                        Favourite
+                      </button>
+                      <button class="product-card__btn-cart btn btn-primary btn-sm" type="button">
+                        <i class="bi bi-cart-plus-fill"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="product-card row g-3 mx-0 p-3" data-name="Apple Watch Series 4 44mm GPS Only" data-category="watches-accessories" data-price="360" data-rating="5" data-stock="true">
+              <div class="col-sm-5 col-md-4">
+                <img src="img/productos/Reloj_producto.jpeg" class="product-card__image img-fluid rounded" alt="Apple Watch Series 4 with black sport band">
+              </div>
+              <div class="col-sm-7 col-md-8">
+                <div class="row h-100">
+                  <div class="col-lg-7">
+                    <h2 class="product-card__title h5"><a href="#">Apple Watch Series 4 44mm GPS Only</a></h2>
+                    <p class="product-card__category small text-muted">Watches &amp; Accessories</p>
+                  </div>
+                  <div class="product-card__details col-lg-5 d-flex flex-column">
+                    <p class="product-card__price h4 mb-0">$360</p>
+                    <p class="product-card__price-info small mb-2">
+                      <del class="product-card__price-old">$400</del>
+                      <span class="product-card__discount">-10%</span>
+                    </p>
+                    <p class="product-card__rating mb-2" aria-label="Rating: 5 out of 5, 4 reviews">
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <span class="product-card__reviews">(4)</span>
+                    </p>
+                    <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$24</strong></p>
+                    <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--available">Available</span></p>
+                    <div class="product-card__actions d-grid gap-2 mt-auto">
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
+                        <i class="bi bi-heart"></i>
+                        Favourite
+                      </button>
+                      <button class="product-card__btn-cart btn btn-primary btn-sm" type="button">
+                        <i class="bi bi-cart-plus-fill"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="product-card row g-3 mx-0 p-3" data-name="Canon Standard Zoom Lens" data-category="camera" data-price="400" data-rating="4" data-stock="false">
+              <div class="col-sm-5 col-md-4">
+                <img src="img/productos/Lente_camara_producto.jpeg" class="product-card__image img-fluid rounded" alt="Canon zoom lens held in a hand">
+              </div>
+              <div class="col-sm-7 col-md-8">
+                <div class="row h-100">
+                  <div class="col-lg-7">
+                    <h2 class="product-card__title h5"><a href="#">Canon Standard Zoom Lens</a></h2>
+                    <p class="product-card__category small text-muted">Camera</p>
+                  </div>
+                  <div class="product-card__details col-lg-5 d-flex flex-column">
+                    <p class="product-card__price h4 mb-0">$400</p>
+                    <p class="product-card__price-info small mb-2">
+                      <del class="product-card__price-old">$500</del>
+                      <span class="product-card__discount">-20%</span>
+                    </p>
+                    <p class="product-card__rating mb-2" aria-label="Rating: 4 out of 5, 10 reviews">
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star-fill" aria-hidden="true"></i>
+                      <i class="bi bi-star" aria-hidden="true"></i>
+                      <span class="product-card__reviews">(10)</span>
+                    </p>
+                    <p class="product-card__shipping small mb-1">Shipping Cost: <strong>$60</strong></p>
+                    <p class="product-card__stock small mb-3">Stock: <span class="product-card__stock-status product-card__stock-status--soldout">Stock-Out</span></p>
+                    <div class="product-card__actions d-grid gap-2 mt-auto">
+                      <button class="product-card__btn-fav btn btn-outline-secondary btn-sm" type="button">
+                        <i class="bi bi-heart"></i>
+                        Favourite
+                      </button>
+                      <button class="product-card__btn-cart btn btn-primary btn-sm" type="button" disabled>
+                        <i class="bi bi-cart-plus-fill"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+          <p id="no-results" class="catalog__empty text-center text-muted my-5 d-none">No products found.</p>
+          <nav class="catalog__pagination mt-4" aria-label="Product pagination">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled"><a class="page-link">Previous</a></li>
+              <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+              <li class="page-item disabled"><a class="page-link">Next</a></li>
+            </ul>
+          </nav>
+        </main>
       </div>
     </div>
     <script
